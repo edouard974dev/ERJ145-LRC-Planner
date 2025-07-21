@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#001f3f" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>ERJ145 LRC Planner</title>
+</head>
+<body>
+  <h1>ERJ-145 LRC Planner</h1>
+  <form id="planner-form">
+    <label for="altitude">Altitude (ft):</label>
+    <select id="altitude" required></select>
+    <label for="weight">Poids (kg):</label>
+    <select id="weight" required></select>
+    <label for="isa">Température à l'ISA (°C):</label>
+    <input type="number" id="isa" value="0">
+    <label for="antiIce">Anti-ice activé :</label>
+    <input type="checkbox" id="antiIce">
+    <button type="submit">Calculer</button>
+  </form>
+  <div id="results" style="display:none;">
+    <h2>Résultats LRC</h2>
+    <ul id="results-list"></ul>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
