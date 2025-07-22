@@ -32,7 +32,7 @@ input, select {
   font-size: 1rem;
   background-color: #001f3f;
   border: 1px solid #FF7F00;
-  color: #FF7F00;
+  color: white; /* ✅ texte en blanc à l’intérieur */
   border-radius: 5px;
 }
 
