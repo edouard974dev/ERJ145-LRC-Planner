@@ -80,12 +80,12 @@ function displayResults(data) {
   const results = document.getElementById('results');
   const list = document.getElementById('results-list');
   list.innerHTML = `
-    <li><strong>N1 % :</strong> ${data.N1.toFixed(1)}%</li>
-    <li><strong>Fuel Flow :</strong> ${data.fuelFlow.toFixed(1)} kg/h/moteur</li>
-    <li><strong>IAS :</strong> ${data.IAS} kt</li>
-    <li><strong>TAS :</strong> ${data.TAS.toFixed(0)} kt</li>
-    <li><strong>Mach :</strong> ${data.mach.toFixed(3)}</li>
-    <li><strong>Specific Range :</strong> ${data.SR.toFixed(3)} NM/kg</li>
+    <li><strong style="color: #FF7F00;">N1 % :</strong> <span style="color: white;">${data.N1.toFixed(1)}%</span></li>
+    <li><strong style="color: #FF7F00;">Fuel Flow :</strong> ${data.fuelFlow.toFixed(1)} kg/h/moteur</li>
+    <li><strong style="color: #FF7F00;">IAS :</strong> ${data.IAS} kt</li>
+    <li><strong style="color: #FF7F00;">TAS :</strong> ${data.TAS.toFixed(0)} kt</li>
+    <li><strong style="color: #FF7F00;">Mach :</strong> <span style="color: white;">${data.mach.toFixed(3)}</span></li>
+    <li><strong style="color: #FF7F00;">Specific Range :</strong> ${data.SR.toFixed(3)} NM/kg</li>
   `;
   results.style.display = 'block';
 }
