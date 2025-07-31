@@ -4,17 +4,17 @@ const altitudeSelect = document.getElementById('altitude');
 const weightSelect = document.getElementById('weight');
 
 // Remplir les altitudes
-for (const alt of Object.keys(lrcData)) {
+for (const altitude of Object.keys(lrcData)) {
   const option = document.createElement('option');
-  option.value = alt;
-  option.textContent = alt + ' ft';
+  option.value = altitude;
+  option.textContent = altitude + ' ft';
   altitudeSelect.appendChild(option);
 }
 
 // Fonction pour mettre à jour les poids
-function updateWeights(selectedAlt) {
+function updateWeights(selectealtitude) {
   weightSelect.innerHTML = ''; // Vider
-  const weights = Object.keys(lrcData[selectedAlt] || {});
+  const weights = Object.keys(lrcData[selectedaltitude] || {});
   if (weights.length === 0) {
     const opt = document.createElement('option');
     opt.textContent = 'Aucune option';
@@ -32,8 +32,8 @@ function updateWeights(selectedAlt) {
 
 // Lors du changement d'altitude
 altitudeSelect.addEventListener('change', () => {
-  const selectedAlt = altitudeSelect.value;
-  updateWeights(selectedAlt);
+  const selectedaltitude = altitudeSelect.value;
+  updateWeights(selectedaltitude);
 });
 
 // Initialiser le menu Poids si une altitude est déjà sélectionnée
@@ -50,17 +50,17 @@ window.addEventListener('DOMContentLoaded', () => {
 document.getElementById('planner-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const alt = altitudeSelect.value;
+  const altitude = altitudeSelect.value;
   const wt = weightSelect.value;
   const isa = parseInt(document.getElementById('isa').value);
   const antiIce = document.getElementById('antiIce').checked;
 
-  if (!lrcData[alt] || !lrcData[alt][wt]) {
+  if (!lrcData[altitude] || !lrcData[altitude][wt]) {
     alert('Données manquantes pour cette combinaison.');
     return;
   }
 
-  const data = { ...lrcData[alt][wt] };
+  const data = { ...lrcData[altitude][wt] };
 
   const tempFactor = isa / 5;
   data.N1 += 1 * tempFactor;
